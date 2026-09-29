@@ -23,6 +23,7 @@
 
         <!-- Lista de Actividades -->
         <div class="space-y-8">
+            
             <h2 class="text-2xl font-semibold text-gray-900 border-b-2 border-gray-200 pb-2">Metodología de Trabajo Diaria</h2>
             
             <!-- Fase 1: Llamada a primera hora y CONEXIÓN -->
@@ -34,11 +35,11 @@
                 <ul class="list-none space-y-4 text-sm text-gray-700">
                     <li class="flex items-start">
                         <span class="text-blue-500 mr-2">✔</span>
-                        <p><strong>Franja Estricta y Minutas:</strong> Avisar al cliente a las 7:00 AM del mismo día o a las 6:00 PM del día anterior. La llamada rápida debe realizarse en la franja de <strong>7:30 AM a 8:30 AM</strong> con cámara encendida (videollamada) y compartiendo pantalla. Enviar siempre un resumen ejecutivo (minuta) al grupo de WhatsApp al finalizar; un "OK" del cliente sobre esta minuta es la orden de ejecución.</p>
+                        <p><strong>Franja Estricta y Minutas:</strong> Avisar al cliente a las 7:00 AM del mismo día o a las 6:00 PM del día anterior. La llamada rápida debe realizarse en la franja de <strong>7:30 AM a 8:45 AM</strong> con cámara encendida (videollamada) y compartiendo pantalla. Enviar siempre un resumen ejecutivo (minuta) al grupo de WhatsApp al finalizar; un "OK" del cliente sobre esta minuta es la orden de ejecución.</p>
                     </li>
                     <li class="flex items-start">
                         <span class="text-blue-500 mr-2">✔</span>
-                        <p><strong>El "Termómetro" del Cliente (Conexión Real):</strong> La llamada no es solo técnica, es para medir cómo se siente <em>realmente</em> el cliente con nuestro servicio. Debes hacer preguntas empáticas y abiertas: <em>"¿Cómo sentiste la calidad de los mensajes esta semana?", "¿Hay algo que te gustaría que mejoremos visualmente para que te sientas más identificado?", "¿Cómo va el cierre de ventas de tu lado?"</em>. Lograr esta conexión humana es vital para que el cliente decida quedarse a largo plazo.</p>
+                        <p><strong>El "Termómetro" del Cliente (Conexión Real):</strong> La llamada no es solo técnica, es para medir cómo se siente <em>realmente</em> el cliente con nuestro servicio. Debes hacer preguntas empáticas y abiertas: <em>"¿Cómo sentiste la calidad de los mensajes esta semana?", "¿Hay algo que te gustaría que mejoremos visualmente para que te sientas más identificado?", "¿Cómo va el cierre de ventas de tu lado?"</em>.</p>
                     </li>
                     <li class="flex items-start">
                         <span class="text-blue-500 mr-2">✔</span>
@@ -47,72 +48,109 @@
                 </ul>
             </div>
 
-            <!-- Fase 2: Recepción de Insumos -->
-            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <h3 class="text-lg font-bold text-amber-600 mb-4 flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
-                    2. Revisión de Insumos y Tiempos de Producción
+            <!-- NUEVA FASE: CRONOGRAMA Y TRAZABILIDAD -->
+            <div class="bg-slate-50 border-2 border-slate-300 rounded-lg p-6 shadow-md">
+                <h3 class="text-xl font-extrabold text-slate-800 mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    2. Cronograma de Ejecución y Trazabilidad (Bloques de 2 Horas)
                 </h3>
-                <ul class="list-none space-y-4 text-sm text-gray-700">
-                    <li class="flex items-start">
-                        <span class="text-amber-500 mr-2">✔</span>
-                        <p><strong>Tiempo de Entrega:</strong> El tiempo de producción para cualquier pieza publicitaria es de 4 días hábiles una vez recibido el material completo.</p>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-amber-500 mr-2">✔</span>
-                        <p><strong>Selección de Material:</strong> Validar si el cliente envió un Drive organizado (Opción 1) o un Drive general sin clasificar (Opción 2). Si usó la Opción 2, el diseñador selecciona a su criterio y no se aceptarán cambios sobre las fotos/videos base usados.</p>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-amber-500 mr-2">✔</span>
-                        <p><strong>Configuración Agente de IA:</strong> Verificar que el cliente haya entregado las instrucciones de entrenamiento (saludo, tono, productos, links) para la IA.</p>
-                    </li>
-                </ul>
+                <p class="text-sm text-slate-600 mb-5">El trabajo de edición de los 3 clientes diarios se debe ejecutar bajo el siguiente horario estricto para garantizar la trazabilidad de entregas y el cumplimiento de la ventana de 2 horas de aprobación (Silencio Positivo).</p>
+                
+                <div class="space-y-4">
+                    <!-- PREPARACIÓN -->
+                    <div class="flex flex-col md:flex-row bg-white border border-slate-200 rounded p-3">
+                        <div class="md:w-1/4 font-bold text-slate-700">07:00 AM - 08:45 AM</div>
+                        <div class="md:w-3/4 text-sm text-slate-600">Revisión de chats, confirmaciones y ejecución de las llamadas de alineación con los clientes. Envío de minutas.</div>
+                    </div>
+
+                    <!-- CLIENTE 1 -->
+                    <div class="flex flex-col md:flex-row bg-blue-50 border-l-4 border-blue-500 rounded p-3">
+                        <div class="md:w-1/4 font-bold text-blue-800">CLIENTE 1</div>
+                        <div class="md:w-3/4 text-sm text-blue-900 space-y-1">
+                            <p><strong>08:45 AM - 10:45 AM:</strong> Edición, diseño y carga a Torre MNC. <span class="font-bold underline">Entrega de propuestas al cliente a las 10:45 AM.</span></p>
+                            <p><strong>10:45 AM - 12:45 PM:</strong> Ventana de revisión de 2 horas para el cliente.</p>
+                            <p><strong>12:45 PM:</strong> Aprobación automática (Silencio Positivo) y continuidad inmediata con la programación y publicación.</p>
+                        </div>
+                    </div>
+
+                    <!-- CLIENTE 2 -->
+                    <div class="flex flex-col md:flex-row bg-emerald-50 border-l-4 border-emerald-500 rounded p-3">
+                        <div class="md:w-1/4 font-bold text-emerald-800">CLIENTE 2</div>
+                        <div class="md:w-3/4 text-sm text-emerald-900 space-y-1">
+                            <p><strong>10:45 AM - 12:45 PM:</strong> Edición, diseño y carga a Torre MNC. <span class="font-bold underline">Entrega de propuestas al cliente a las 12:45 PM.</span></p>
+                            <p><strong>12:45 PM - 02:45 PM:</strong> Ventana de revisión de 2 horas para el cliente.</p>
+                            <p><strong>02:45 PM:</strong> Aprobación automática (Silencio Positivo) y continuidad inmediata con la programación y publicación.</p>
+                        </div>
+                    </div>
+
+                    <!-- ALMUERZO -->
+                    <div class="flex flex-col md:flex-row bg-white border border-slate-200 rounded p-3 opacity-75">
+                        <div class="md:w-1/4 font-bold text-slate-500">12:45 PM - 01:45 PM</div>
+                        <div class="md:w-3/4 text-sm text-slate-500">Pausa / Almuerzo.</div>
+                    </div>
+
+                    <!-- CLIENTE 3 -->
+                    <div class="flex flex-col md:flex-row bg-purple-50 border-l-4 border-purple-500 rounded p-3">
+                        <div class="md:w-1/4 font-bold text-purple-800">CLIENTE 3</div>
+                        <div class="md:w-3/4 text-sm text-purple-900 space-y-1">
+                            <p><strong>01:45 PM - 03:45 PM:</strong> Edición, diseño y carga a Torre MNC. <span class="font-bold underline">Entrega de propuestas al cliente a las 03:45 PM.</span></p>
+                            <p><strong>03:45 PM - 05:45 PM:</strong> Ventana de revisión de 2 horas para el cliente.</p>
+                            <p><strong>05:45 PM:</strong> Aprobación automática (Silencio Positivo) y continuidad inmediata con la programación y publicación.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- CIERRE -->
+                    <div class="flex flex-col md:flex-row bg-white border border-slate-200 rounded p-3">
+                        <div class="md:w-1/4 font-bold text-slate-700">06:00 PM</div>
+                        <div class="md:w-3/4 text-sm text-slate-600">Revisión final de chats, captura de cierre del día y desconexión.</div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Fase 3: Edición y Análisis de Feed -->
+            <!-- Fase 3: Gestión y Aprobación Operativa -->
             <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                 <h3 class="text-lg font-bold text-green-700 mb-4 flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    3. Gestión en Sistema, Edición y Aprobación
+                    3. Gestión en Sistema y Estrategia de Perfil
                 </h3>
                 <ul class="list-none space-y-4 text-sm text-gray-700">
                     <li class="flex items-start">
                         <span class="text-green-600 mr-2">✔</span>
-                        <p><strong>Flujo de Clientes y Soporte:</strong> Gestionar 3 clientes diarios. Verificar que cada cliente esté correctamente agregado en <a href="https://app.marketingnetworkc.com/" class="text-green-700 underline" target="_blank">app.marketingnetworkc.com</a>. Además, es obligatorio asegurar que la atención y el soporte se brinden interactuando siempre desde nuestra cuenta oficial de <strong>"Soporte Redes"</strong>.</p>
+                        <p><strong>Soporte Oficial:</strong> Verificar que cada cliente esté correctamente agregado en <a href="https://app.marketingnetworkc.com/" class="text-green-700 underline" target="_blank">app.marketingnetworkc.com</a>. Es obligatorio asegurar que la atención y el soporte se brinden interactuando siempre desde nuestra cuenta oficial de <strong>"Soporte Redes"</strong>.</p>
                     </li>
                     <li class="flex items-start">
                         <span class="text-green-600 mr-2">✔</span>
-                        <p><strong>Análisis Profundo del Feed de IG:</strong> Antes de diseñar, auditar el perfil del cliente: ¿Hay armonía visual en el Grid? ¿La biografía comunica claramente la oferta? ¿Las portadas de las Historias Destacadas están optimizadas y actualizadas? ¿Qué formatos (Reels vs Carruseles) están generando más interacción orgánica? Identificar vacíos en el contenido y proponer mejoras estéticas y de retención.</p>
+                        <p><strong>Análisis Profundo del Feed de IG:</strong> Antes de diseñar, auditar el perfil del cliente: ¿Hay armonía visual en el Grid? ¿La biografía comunica claramente la oferta? ¿Las portadas de las Historias Destacadas están optimizadas? ¿Qué formatos generan más interacción? Proponer mejoras estéticas y de retención.</p>
                     </li>
                     <li class="flex items-start">
                         <span class="text-green-600 mr-2">✔</span>
                         <p><strong>Estrategia Visual:</strong> Priorizar fotos reales sobre bancos de imágenes, indagar sobre la música en tendencia a utilizar y asegurar que los estilos de fuente sean coherentes con el manual de marca del cliente.</p>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-green-600 mr-2">✔</span>
-                        <p><strong>Gestión en Torre MNC y Aprobación (Silencio Positivo):</strong> Cargar todo inmediatamente a la app <strong>Torre MNC</strong>. Entregar propuestas al cliente y, si transcurren 2 horas desde la entrega o el reloj marca las 3:00 PM (lo que ocurra primero), se aplicará la aprobación tácita (silencio positivo) dando continuidad a la programación de las redes.</p>
                     </li>
                 </ul>
             </div>
 
             <!-- Fase 4: Pauta, IA y Análisis de Ventas -->
             <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <h3 class="text-lg font-bold text-purple-700 mb-4 flex items-center">
+                <h3 class="text-lg font-bold text-amber-600 mb-4 flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                     4. Pauta Publicitaria, IA y Análisis de Ventas
                 </h3>
                 <ul class="list-none space-y-4 text-sm text-gray-700">
                     <li class="flex items-start">
-                        <span class="text-purple-600 mr-2">✔</span>
-                        <p><strong>Análisis de Rendimiento Comercial con IA:</strong> Al exportar las métricas de Meta y TikTok Ads, no solo entregar números vacíos. Usar IA para sacar conclusiones orientadas a ventas: <em>¿Qué creativo publicitario trajo el Costo por Lead más bajo? ¿El anuncio de video funciona mejor que la imagen estática? ¿Cómo está respondiendo el segmento de edad X?</em> Explicarle esto al cliente con palabras sencillas durante la llamada.</p>
+                        <span class="text-amber-500 mr-2">✔</span>
+                        <p><strong>Análisis de Rendimiento Comercial con IA:</strong> Al exportar las métricas de Meta y TikTok Ads, usar IA para sacar conclusiones orientadas a ventas: <em>¿Qué creativo publicitario trajo el Costo por Lead más bajo? ¿El anuncio de video funciona mejor?</em> Explicarle esto al cliente con palabras sencillas durante la llamada matutina.</p>
                     </li>
                     <li class="flex items-start">
-                        <span class="text-purple-600 mr-2">✔</span>
-                        <p><strong>Evaluación de Calidad del Lead:</strong> Indagar incisivamente si los contactos generados por la pauta están siendo calificados. Si hay muchos leads pero cero ventas, la campaña debe ajustarse creativamente o en segmentación. Apagar proactivamente los diseños con menor rendimiento.</p>
+                        <span class="text-amber-500 mr-2">✔</span>
+                        <p><strong>Evaluación de Calidad del Lead:</strong> Indagar incisivamente si los contactos generados por la pauta están siendo calificados. Apagar proactivamente los diseños con menor rendimiento.</p>
                     </li>
                     <li class="flex items-start">
-                        <span class="text-purple-600 mr-2">✔</span>
-                        <p><strong>Optimización de Pauta:</strong> Los cambios no tienen una frecuencia obligatoria. Si una campaña está arrojando resultados óptimos de ventas, se mantendrá sin alteraciones técnicas para no perjudicar la curva de aprendizaje del algoritmo.</p>
+                        <span class="text-amber-500 mr-2">✔</span>
+                        <p><strong>Optimización de Pauta:</strong> Si una campaña está arrojando resultados óptimos de ventas, se mantendrá sin alteraciones técnicas para no perjudicar la curva de aprendizaje del algoritmo.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-amber-500 mr-2">✔</span>
+                        <p><strong>Configuración Agente de IA:</strong> Verificar que el cliente haya entregado las instrucciones de entrenamiento (saludo, tono, productos, links) para la IA.</p>
                     </li>
                 </ul>
             </div>
@@ -128,7 +166,7 @@
 
         <!-- Formulario de Aceptación -->
         <div class="mt-10 pt-6 border-t border-gray-200 text-center">
-            <p class="mb-6 text-gray-600 text-sm">Al firmar, confirmas que ejecutarás estrictamente esta metodología operativa para garantizar los resultados y la retención de nuestros clientes.</p>
+            <p class="mb-6 text-gray-600 text-sm">Al firmar, confirmas que ejecutarás estrictamente esta metodología y respetarás la trazabilidad horaria del cronograma para garantizar los resultados.</p>
             
             <form onsubmit="event.preventDefault(); alert('¡Acuerdo aceptado! Metodología de Marketing Network C alineada.');" class="max-w-md mx-auto space-y-4">
                 <input type="text" placeholder="Nombre Completo del Diseñador" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
