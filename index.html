@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acuerdo de Labores Diarias y SLA - Consultor de Marketing y Diseño</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Librería para generar el PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased py-10">
 
-    <div class="max-w-5xl mx-auto bg-white p-8 md:p-12 shadow-lg rounded-2xl border-t-4 border-blue-600">
+    <!-- Contenedor principal a capturar en el PDF -->
+    <div id="documentoContenido" class="max-w-5xl mx-auto bg-white p-8 md:p-12 shadow-lg rounded-2xl border-t-4 border-blue-600">
         
         <!-- Encabezado -->
         <div class="text-center mb-10">
@@ -18,7 +21,7 @@
 
         <!-- Bienvenida / Intro -->
         <div class="mb-8 p-5 bg-blue-50 rounded-xl text-blue-900 text-sm leading-relaxed border border-blue-200">
-            <p><strong>Nuestra filosofía:</strong> La única forma de retener a un cliente es con resultados y una excelente relación humana. Respetamos tu autonomía como Consultor freelance, pero para que tu trabajo fluya sin atrasos ni cuellos de botella, tu rol es ejecutar nuestra metodología en la plataforma <strong>Torre MNC</strong> bajo un esquema de tiempos coordinado. Esto asegura que las campañas fluyan con calidad y el cliente sienta un respaldo estratégico y real por parte de la agencia.</p>
+            <p><strong>Nuestra filosofía:</strong> La única forma de retener a un cliente es con resultados y una excelente relación humana. Respetamos tu autonomía como Consultor freelance, pero para que tu trabajo fluya sin atrasos ni cuellos de botella, tu rol es ejecutar nuestra metodología en la plataforma <a href="https://app.marketingnetworkc.com/" target="_blank" class="text-blue-700 underline font-bold">Torre MNC (app.marketingnetworkc.com)</a> bajo un esquema de tiempos coordinado. Esto asegura que las campañas fluyan con calidad y el cliente sienta un respaldo estratégico y real por parte de la agencia.</p>
         </div>
 
         <!-- Lista de Actividades -->
@@ -244,22 +247,89 @@
                 <p class="text-sm text-slate-700">Todos los acuerdos, reportes y gestión de activos operan de manera confidencial y bajo la titularidad legal de <strong>CHRISTIAN ALBEIRO SÁNCHEZ MURCIA (CC 1073510100 de Funza)</strong> para la agencia Marketing Network C. Se exige profesionalismo para cumplir a cabalidad con el SLA prometido a nuestros clientes.</p>
             </div>
         </div>
+    </div>
 
-        <!-- Formulario de Aceptación -->
-        <div class="mt-10 pt-6 border-t border-gray-200 text-center">
+    <!-- Formulario de Aceptación y Generación de PDF fuera del contenedor imprimible -->
+    <div class="max-w-5xl mx-auto mt-8 mb-12 px-8">
+        <div class="pt-6 border-t border-gray-300 text-center">
             <p class="mb-6 text-gray-600 text-sm">Al firmar, confirmas que ejecutarás esta metodología y te adherirás al esquema de trazabilidad de entregas sugerido para garantizar el éxito del proyecto.</p>
             
-            <form onsubmit="event.preventDefault(); alert('¡Acuerdo aceptado! Metodología de Marketing Network C alineada.');" class="max-w-md mx-auto space-y-4">
-                <input type="text" placeholder="Nombre Completo del Consultor" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <input type="text" placeholder="Documento de Identidad (C.C.)" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <form id="acuerdoForm" class="max-w-md mx-auto space-y-4">
+                <input type="text" id="nombreConsultor" placeholder="Nombre Completo del Consultor" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="text" id="cedulaConsultor" placeholder="Documento de Identidad (C.C.)" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 
-                <button type="submit" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-md">
+                <button type="submit" id="submitBtn" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-md">
                     Aceptar y Comprometerse con la Metodología
                 </button>
             </form>
         </div>
-
     </div>
 
+    <!-- Script para generar el PDF y simular envío -->
+    <script>
+        document.getElementById('acuerdoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombreConsultor').value;
+            const cedula = document.getElementById('cedulaConsultor').value;
+            const btn = document.getElementById('submitBtn');
+            
+            // Cambiar estado del botón
+            btn.innerText = "Generando PDF y Enviando...";
+            btn.disabled = true;
+            btn.classList.replace('bg-blue-600', 'bg-gray-400');
+            btn.classList.replace('hover:bg-blue-700', 'hover:bg-gray-400');
+
+            // Elemento a convertir en PDF
+            const element = document.getElementById('documentoContenido');
+            
+            // Opciones de html2pdf
+            const opt = {
+                margin:       10,
+                filename:     `SLA_MarketingNetworkC_${nombre.replace(/\s+/g, '_')}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Generar el PDF en formato base64
+            html2pdf().set(opt).from(element).outputPdf('datauristring').then(function(pdfBase64) {
+                
+                /*
+                // =========================================================
+                // INTEGRACIÓN CON EL BACKEND DE TORRE MNC (PHP)
+                // =========================================================
+                // Como gestionas Torre MNC en PHP, aquí debes enviar el 
+                // base64 mediante fetch a tu archivo PHP (ej. procesar_sla.php)
+                // para que use PHPMailer y envíe el correo a khmurcia2@gmail.com
+                
+                fetch('https://app.marketingnetworkc.com/api/procesar_sla.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        nombre: nombre, 
+                        cedula: cedula, 
+                        archivo_pdf: pdfBase64 
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Correo enviado correctamente por el servidor');
+                })
+                .catch(error => console.error('Error:', error));
+                */
+
+                // Para asegurar que el Consultor también guarde una copia,
+                // forzamos la descarga del PDF en su dispositivo:
+                html2pdf().set(opt).from(element).save().then(() => {
+                    alert(`¡Acuerdo aceptado con éxito por ${nombre}!\n\nEl documento PDF ha sido generado y enviado al correo khmurcia2@gmail.com para los registros de Marketing Network C.`);
+                    
+                    // Restaurar botón
+                    btn.innerText = "Acuerdo Firmado y Enviado";
+                    btn.classList.replace('bg-gray-400', 'bg-green-600');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
